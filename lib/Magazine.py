@@ -5,6 +5,7 @@ class Magazine:
         # Initializes a Magazine with a given name and category.
         self._name = name
         self._category = category
+        self._contributors = []  # List to store Author instances who have written for this magazine
         Magazine._all_magazines.append(self)
 
     def get_name(self):
