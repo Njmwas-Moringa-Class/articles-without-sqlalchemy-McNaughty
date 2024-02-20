@@ -24,7 +24,7 @@ class Magazine:
         if author not in self._contributors:
             self._contributors.append(author)
 
-    def contributors(self):
+    def contributing_authors(self):
         # Returns a list of Author instances who have contributed to this magazine.
         return self._contributors
 
