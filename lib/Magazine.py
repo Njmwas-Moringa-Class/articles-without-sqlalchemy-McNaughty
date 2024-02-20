@@ -6,6 +6,7 @@ class Magazine:
         self._name = name
         self._category = category
         self._contributors = []  # List to store Author instances who have written for this magazine
+        self._articles = []  # List to store Article instances associated with this magazine
         Magazine._all_magazines.append(self)
 
     @property
@@ -18,16 +19,33 @@ class Magazine:
         # Returns the category of the magazine.
         return self._category
 
-    def contributing_authors(self, author):
+    def add_contributor(self, author):
         # Adds an Author instance to the list of contributors for this magazine.
         if author not in self._contributors:
             self._contributors.append(author)
 
     def contributors(self):
-        # Returns a list of Author instances who have written for this magazine.
+        # Returns a list of Author instances who have contributed to this magazine.
         return self._contributors
+
+    def add_article(self, article):
+        # Adds an Article instance to the list of articles associated with this magazine.
+        self._articles.append(article)
+
+    def articles(self):
+        # Returns a list of Article instances associated with this magazine.
+        return self._articles
+
+    def article_titles(self):
+        # Returns a list of titles of articles associated with this magazine.
+        return [article.title for article in self._articles]
 
     @classmethod
     def all(cls):
         # Returns a list of all Magazine instances.
         return cls._all_magazines
+
+    @classmethod
+    def find_by_name(cls, name):
+        # Finds magazines by name.
+        return [magazine for magazine in cls._all_magazines if magazine.name == name]
