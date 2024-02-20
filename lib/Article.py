@@ -8,18 +8,19 @@ class Article:
         self._title = title
         Article._all_articles.append(self)
 
+    @property
     def title(self):
         # Returns the title of the article.
         return self._title
-    
+
+    @property
     def author(self):
         # Returns the author of the article.
-
         return self._author
 
+    @property
     def magazine(self):
         # Returns the magazine of the article.
-
         return self._magazine
 
     @classmethod

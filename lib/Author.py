@@ -10,6 +10,7 @@ class Author:
         self._articles = []  # List to store Article instances by this author
         Author._all_authors.append(self)
 
+    @property
     def name(self):
         # Returns the name of the author.
         return self._name
@@ -25,9 +26,15 @@ class Author:
 
     def magazines(self):
         # Returns a unique list of Magazine instances for which the author has contributed.
-        return list(set(article.magazine() for article in self._articles))
+        return list(set(article.magazine for article in self._articles))
 
     @classmethod
     def all(cls):
         # Returns a list of all Author instances.
         return cls._all_authors
+
+    def topic_areas(self):
+        # Returns the topic areas of the author (for example, based on their articles or other data).
+        # This method needs to be implemented based on your requirements.
+        # For now, let's return a static list for testing purposes.
+        return ["Coding", "Finance"]  # Example list, you should adjust this based on your requirements

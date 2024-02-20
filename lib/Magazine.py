@@ -8,11 +8,13 @@ class Magazine:
         self._contributors = []  # List to store Author instances who have written for this magazine
         Magazine._all_magazines.append(self)
 
-    def find_by_name(self):
+    @property
+    def name(self):
         # Returns the name of the magazine.
         return self._name
 
-    def get_category(self):
+    @property
+    def category(self):
         # Returns the category of the magazine.
         return self._category
 
@@ -29,4 +31,3 @@ class Magazine:
     def all(cls):
         # Returns a list of all Magazine instances.
         return cls._all_magazines
-
