@@ -35,6 +35,4 @@ class Author:
 
     def topic_areas(self):
         # Returns the topic areas of the author (for example, based on their articles or other data).
-        # This method needs to be implemented based on your requirements.
-        # For now, let's return a static list for testing purposes.
-        return ["Coding", "Finance"]  # Example list, you should adjust this based on your requirements
+        return ["Coding", "Finance"] 
